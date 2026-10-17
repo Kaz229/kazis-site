@@ -1,0 +1,32 @@
+/* Kazis : la moutarde du bandeau de la page d'état, une colonne de lecture, rien d'autre. */
+:root {
+  --paper: #f6f4ef; --ink: #17181c; --ink-2: #5d6068; --rule: #e1ddd2;
+  --mustard: #f2b233; --on-mustard: #241a00;
+  --display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
+  --body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --mono: "JetBrains Mono", "SF Mono", Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --paper: #131418; --ink: #edeef0; --ink-2: #9aa0ab; --rule: #2a2e36; color-scheme: dark; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 17px/1.65 var(--body); }
+.band { background: var(--mustard); color: var(--on-mustard); padding-inline: 20px; padding-block: 44px 36px; }
+.band-inner, main, footer { max-width: 680px; margin: 0 auto; }
+.eyebrow { font: 600 12px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; opacity: .7; margin: 0 0 14px; }
+h1 { font: 800 clamp(40px, 9vw, 64px)/.95 var(--display); letter-spacing: -.035em; margin: 0; text-wrap: balance; }
+.lede { font-size: 19px; margin: 16px 0 0; max-width: 34em; }
+main { padding-inline: 20px; padding-block: 36px 20px; }
+h2 { font: 700 22px/1.25 var(--display); letter-spacing: -.01em; margin: 36px 0 8px; text-wrap: balance; }
+p, ul { margin: 0 0 14px; max-width: 65ch; }
+li { margin-bottom: 6px; }
+a { color: inherit; text-decoration-thickness: 2px; text-decoration-color: var(--mustard); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--mustard); outline-offset: 3px; }
+code { font: .88em var(--mono); background: color-mix(in srgb, var(--mustard) 18%, transparent); padding: 1px 5px; border-radius: 4px; }
+.facts { list-style: none; padding: 0; display: grid; gap: 0; border-top: 1px solid var(--rule); }
+.facts li { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); gap: 16px; padding: 12px 0; margin: 0;
+  border-bottom: 1px solid var(--rule); }
+.facts b { font: 600 13px/1.6 var(--mono); color: var(--ink-2); text-transform: uppercase; letter-spacing: .06em; }
+footer { padding-inline: 20px; padding-block: 24px 40px; color: var(--ink-2); font: 13px var(--mono); }
+@media (max-width: 520px) { .facts li { grid-template-columns: minmax(0, 1fr); gap: 2px; } }
